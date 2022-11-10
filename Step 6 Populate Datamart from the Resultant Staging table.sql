@@ -9,7 +9,7 @@ FROM Assignment1Data ORDER BY Cast(Assignment1Data.[Sale_Date] AS date)
 Insert into DimCustomer
 (Customer_ID, Customer_Name, Customer_Surname,Customer_Loyalty)
 SELECT distinct Assignment1Data.[Customer_ID], Assignment1Data.[Customer_Name], Assignment1Data.[Customer_Surname],Assignment1Data.[Customer_Loyalty]
-   From Assignment1Data
+From Assignment1Data
 
 Insert into DimLocation
 (Location_ID, Location_Name)

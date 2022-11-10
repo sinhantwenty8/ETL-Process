@@ -1,4 +1,4 @@
- USE MASTER
+USE MASTER
 GO
 IF DB_ID (N'EBUS3030_Assignment_1') IS NOT NULL DROP DATABASE EBUS3030_Assignment_1;
 GO
@@ -21,6 +21,7 @@ CREATE TABLE DimCustomer (
 Customer_Loyalty bit not null,
 Primary Key (Customer_Key)
 )
+
 CREATE TABLE DimItem (               
  Item_Key int identity not null,               
  Item_ID nvarchar(255) not  null,                   
@@ -28,6 +29,7 @@ CREATE TABLE DimItem (
  Item_Unit_Price float not null,
 Primary Key (Item_Key)
 )
+
 CREATE TABLE DimTime (
  Date_Key int identity not null,
  Date_ID date not null,                         
@@ -36,12 +38,14 @@ CREATE TABLE DimTime (
  Date_Year int not null,
 Primary Key (Date_Key)
 )
+
 CREATE TABLE DimLocation (
  Location_Key int identity not null,       
  Location_ID nvarchar(255) not  null,
  Location_Name nvarchar(20)not null,
 Primary Key (Location_Key)              
 )
+
 CREATE TABLE DimStaff (
  Staff_Key int identity not null,               
  Staff_ID nvarchar(255) not null,                       
@@ -51,6 +55,7 @@ CREATE TABLE DimStaff (
  Primary Key (Staff_Key),
  FOREIGN KEY (Staff_Office_Key) REFERENCES DimLocation (Location_Key)
  )
+ 
 CREATE TABLE FactSale (
  Sale_Key int identity not null,                       
  Receipt_ID nvarchar(255) not null,        
